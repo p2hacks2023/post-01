@@ -9,6 +9,11 @@ public class TouchScript : MonoBehaviour
     Texture2D drawTexture; //テクスチャ―が入る変数
     Color[] buffer; //rgbの値が入る配列
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     //一番最初に実行される
     void Start()
     {
