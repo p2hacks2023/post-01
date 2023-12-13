@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityEditor;
 
 public class TouchScript : MonoBehaviour
 {
-    Texture2D drawTexture;
-    Color[] buffer;
+    Texture2D drawTexture; //テクスチャ―が入る変数
+    Color[] buffer; //rgbの値が入る配列
 
-    // Start is called before the first frame update
+    //一番最初に実行される
     void Start()
     {
-        Texture2D mainTexture = (Texture2D)GetComponent<Renderer>().material.mainTexture;
-        Color[] pixels = mainTexture.GetPixels();
+        Texture2D mainTexture = (Texture2D)GetComponent<Renderer>().material.mainTexture; //mainTextureに画像を入れる
+        Color[] pixels = mainTexture.GetPixels(); //pixels配列の要素数は画像のピクセル分作成
 
         buffer = new Color[pixels.Length];
         pixels.CopyTo(buffer, 0);
@@ -20,6 +22,7 @@ public class TouchScript : MonoBehaviour
         drawTexture.filterMode = FilterMode.Point;
     }
 
+    //pには画面に当たった時のuv座標*ピクセル数が表示される
     public void Draw(Vector2 p)
     {
         Color color = new Color(1f, 1f, 1f, 0f);
