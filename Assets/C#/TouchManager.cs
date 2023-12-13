@@ -32,13 +32,13 @@ public class TouchScript : MonoBehaviour
     {
         Color color = new Color(1f, 1f, 1f, 0f);
 
-        for (int x = 0; x < 256; x++)
+        for (int x = 0; x < drawTexture.width; x++)
         {
-            for (int y = 0; y < 256; y++)
+            for (int y = 0; y < drawTexture.height; y++)
             {
-                if ((p - new Vector2(x, y)).magnitude < 5)
+                if ((p - new Vector2(x, y)).magnitude < 12)
                 {
-                    buffer.SetValue(color, x + 256 * y);
+                    buffer.SetValue(color, x + drawTexture.width * y);
                 }
             }
         }
@@ -53,7 +53,8 @@ public class TouchScript : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                Draw(hit.textureCoord * 256);
+                Draw(hit.textureCoord * drawTexture.width);
+
             }
 
             drawTexture.SetPixels(buffer);
