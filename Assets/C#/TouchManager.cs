@@ -8,6 +8,7 @@ public class TouchScript : MonoBehaviour
 {
     Texture2D drawTexture; //テクスチャ―が入る変数
     Color[] buffer; //rgbの値が入る配列
+    int size = 512;
 
     private void Awake()
     {
@@ -32,13 +33,13 @@ public class TouchScript : MonoBehaviour
     {
         Color color = new Color(1f, 1f, 1f, 0f);
 
-        for (int x = 0; x < drawTexture.width; x++)
+        for (int x = 0; x < size; x++)
         {
-            for (int y = 0; y < drawTexture.height; y++)
+            for (int y = 0; y < size; y++)
             {
                 if ((p - new Vector2(x, y)).magnitude < 12)
                 {
-                    buffer.SetValue(color, x + drawTexture.width * y);
+                    buffer.SetValue(color, x + size * y);
                 }
             }
         }
@@ -53,7 +54,7 @@ public class TouchScript : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                Draw(hit.textureCoord * drawTexture.width);
+                Draw(hit.textureCoord * size);
 
             }
 
