@@ -16,7 +16,7 @@ MonoBehaviour:
   m_simpleMaxParticles: 15000
   m_simpleSubstepCount: 2
   m_simpleIterationCount: 5
-  m_simpleGravity: {x: 0, y: -9.81, z: 0}
+  m_simpleGravity: {x: 0, y: -1, z: 0}
   m_simpleParticleSize: 0.1
   m_simpleParticleFriction: 0.1
   m_simpleParticleRestitution: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_recreateSolver: 0
   m_substepCount: 2
   m_iterationCount: 5
-  m_gravity: {x: 0, y: -9.81, z: 0}
+  m_gravity: {x: 0, y: -1, z: 0}
   m_radius: 0.15
   m_solidRest: 0.1
   m_fluidRest: 0.095
