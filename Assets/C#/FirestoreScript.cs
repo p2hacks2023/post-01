@@ -12,6 +12,8 @@ public class FirestoreScript : MonoBehaviour
     byte[] dataImage = new byte[]{};
     public GameObject canvas;
 
+    string windwoUrl = "";
+
     public void sendWindow()
     {
         FirebaseStorage storage = FirebaseStorage.DefaultInstance;
@@ -32,13 +34,18 @@ public class FirestoreScript : MonoBehaviour
             }
         });
 
+        windowRef.GetDownloadUrlAsync().ContinueWithOnMainThread(task => {
+            if (!task.IsFaulted && !task.IsCanceled) {
+                windwoUrl = task.Result.ToString();
+                Debug.Log("Download URL: " + task.Result);
+            }
+        });
+
         var db = FirebaseFirestore.DefaultInstance;
         DocumentReference docRef = db.Collection("windowList").Document("myWindow");
         Dictionary<string, object> city = new Dictionary<string, object>
         {
-                { "Name", "Los Angeles" },
-                { "State", "CA" },
-                { "Country", "USA" }
+                { "URL", windwoUrl },
         };
         docRef.SetAsync(city).ContinueWithOnMainThread(task => {
             Debug.Log("Added data.");
