@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LongPressBack : MonoBehaviour
 {
   public GameObject panel;
+  public GameObject image;
+  public GameObject button;
 
   //実行するメソッド
   [SerializeField]
@@ -65,13 +68,15 @@ private void Awake (){
     IEnumerator ChangePaneltoBigSize()
     {
         var size = 1.0f;
-        var speed = 0.005f;       
+        var speed = 0.01f;       
         
         while (size >= 0f)
         {
            
             panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), size);
             size -= speed;  
+            image.GetComponent<Image>().color -= new Color(0,0,0,0.008f);
+            button.GetComponent<Image>().color -= new Color(0,0,0,0.008f);
             yield return null;
         }
         

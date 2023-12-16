@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEditor;
+using UnityEngine.EventSystems;
 
 public class TouchManager : MonoBehaviour
 {
     Texture2D drawTexture; //テクスチャ―が入る変数
     Color[] buffer; //rgbの値が入る配列
     int size = 512;
+    static public float dis = 100.0f;
 
     private void Awake()
     {
@@ -50,9 +52,11 @@ public class TouchManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) return;
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Physics.Raycast(ray, out hit, dis))
             {
                 Draw(hit.textureCoord * size);
 
