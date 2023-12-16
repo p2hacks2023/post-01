@@ -76,7 +76,6 @@ private void Awake (){
         while (size <= 0.8f)
         {
             panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(50, 50, 30), size);
-          
             size += speed;
 
             yield return null;

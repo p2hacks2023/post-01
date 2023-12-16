@@ -859,6 +859,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1604437210}
+  image: {fileID: 448941579}
+  button: {fileID: 275812886}
   _event:
     m_PersistentCalls:
       m_Calls:
