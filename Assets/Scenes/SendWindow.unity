@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1421834368}
         m_TargetAssemblyTypeName: FirestoreScript, Assembly-CSharp
         m_MethodName: sendWindow
         m_Mode: 1

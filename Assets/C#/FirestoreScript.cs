@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -41,11 +42,15 @@ public class FirestoreScript : MonoBehaviour
             }
         });
 
+        DateTime dt;
+        dt = DateTime.Now;
+
         var db = FirebaseFirestore.DefaultInstance;
         DocumentReference docRef = db.Collection("windowList").Document("myWindow");
         Dictionary<string, object> city = new Dictionary<string, object>
         {
                 { "URL", windwoUrl },
+                { "Date", dt},
         };
         docRef.SetAsync(city).ContinueWithOnMainThread(task => {
             Debug.Log("Added data.");
