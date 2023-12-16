@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEditor;
 
-public class TouchScript : MonoBehaviour
+public class TouchManager : MonoBehaviour
 {
     Texture2D drawTexture; //テクスチャ―が入る変数
     Color[] buffer; //rgbの値が入る配列

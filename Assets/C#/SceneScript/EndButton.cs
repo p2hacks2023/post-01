@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndButton : MonoBehaviour
 {
-   public void NextSendWindow(){
+    public GameObject window;
+
+    public void NextSendWindow(){
+        DontDestroyOnLoad(window);
+        var touchManager = window.GetComponent<TouchManager>();
+        Destroy(touchManager);
+
         SceneManager.LoadScene("SendWindow");
     }
 }
