@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class LongPressExit : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class LongPressExit : MonoBehaviour
   
   //長押しと判定する時間、メソッドを実行する間隔
   [SerializeField]
-  private float _longPressTime = 1, _invokeInterval = 0.2f;
+  private float _longPressTime = 3, _invokeInterval = 0.2f;
 
   //長押しと判定するまで or 次のメソッドを実行するまでの時間
   private float _waitTime = 0;
@@ -23,6 +24,7 @@ public class LongPressExit : MonoBehaviour
 
   //一度でもメソッドを実行したか
   private bool _isInvokedEvent = false;
+
 
 private void Awake (){
     //ボタンを押し時のイベント作成
@@ -56,22 +58,32 @@ private void Awake (){
     _isPressing     = true;
     _isInvokedEvent = false;
     _waitTime       = _longPressTime;
+  
     StartCoroutine(ChangePaneltoBigSize());
+    Debug.Log(_waitTime);
 
     IEnumerator ChangePaneltoBigSize()
     {
         var size = 0f;
-        var speed = 0.005f;
+        var speed = 0.01f;       
         
-        while (size <= 10.0f)
+        while (size <= 1.0f)
         {
-            panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(10, 10, 10), size);
+            panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(50, 50, 30), size);
             size += speed;
 
             yield return null;
         }
+         if(size == 1.0f){
+              SceneManager.LoadScene("TitleScene");
+            }
+    
+/*
+        if(_waitTime >= 6){
+        SceneManager.LoadScene("TitleScene");
+        }
+        */
     }
-
   }
 
   //ボタンを離した瞬間に実行されるメソッド
