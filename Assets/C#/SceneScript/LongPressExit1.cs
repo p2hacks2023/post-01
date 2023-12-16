@@ -74,7 +74,6 @@ private void Awake (){
         while (size <= 0.8f)
         {
             panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(50, 50, 30), size);
-            image.color -= new Color(0,0,0,size);
             size += speed;
 
             yield return null;
@@ -82,12 +81,6 @@ private void Awake (){
          if(size >= 0.8f){
               SceneManager.LoadScene("SendWindow");
             }
-    
-/*
-        if(_waitTime >= 6){
-        SceneManager.LoadScene("TitleScene");
-        }
-        */
     }
   }
 
