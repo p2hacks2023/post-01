@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectWindow.unity
     guid: 31e2ed59aebb64e64b41f7cdcc104df5
+  - enabled: 1
+    path: Assets/Scenes/WaitScene.unity
+    guid: 38f6431ff7fd947a2ba34908340e6c86
   m_configObjects: {}

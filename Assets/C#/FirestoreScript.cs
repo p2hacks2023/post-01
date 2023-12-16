@@ -6,6 +6,7 @@ using Firebase.Extensions;
 using Firebase.Firestore;
 using Firebase.Storage;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirestoreScript : MonoBehaviour
 {
@@ -78,5 +79,7 @@ public class FirestoreScript : MonoBehaviour
         UnityEngine.Object.Destroy(textureScreenCapture);
 
         canvas.SetActive(true);
+
+       
     }
 }

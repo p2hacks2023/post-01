@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EditWindow : MonoBehaviour
+public class Waitwindow : MonoBehaviour
 {
-   public void NextEditWindow(){
+   public void NextWaitWindow(){
         TouchManager.dis = 0.0f;
-        SceneManager.LoadScene("EditwinScene");
+        SceneManager.LoadScene("WaitScene");
     }
 }
+

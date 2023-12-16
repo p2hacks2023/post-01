@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275812887}
   - component: {fileID: 275812890}
+  - component: {fileID: 275812892}
   - component: {fileID: 275812889}
   - component: {fileID: 275812888}
   - component: {fileID: 275812891}
@@ -207,6 +208,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 275812892}
+        m_TargetAssemblyTypeName: Waitwindow, Assembly-CSharp
+        m_MethodName: NextWaitWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1421834368}
         m_TargetAssemblyTypeName: FirestoreScript, Assembly-CSharp
         m_MethodName: sendWindow
@@ -269,6 +282,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &275812892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275812886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8030a2a6c3534a2da008164777ba19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &436503437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1751,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604437210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1000}
+  m_LocalPosition: {x: 0, y: 0, z: -700}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
