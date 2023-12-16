@@ -82,6 +82,7 @@ private void Awake (){
         }
          if(size >= 0.8f){
               SceneManager.LoadScene("SendWindow");
+              TouchManager.dis = 0.0f;
             }
     }
   }
