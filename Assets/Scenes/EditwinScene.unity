@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44866621, g: 0.4975717, b: 0.56965154, a: 1}
+  m_IndirectSpecularColor: {r: 0.451401, g: 0.5008942, b: 0.5723129, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 165504036}
   - component: {fileID: 165504035}
   m_Layer: 5
-  m_Name: InputField (Legacy)
+  m_Name: windowInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,8 +1163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -293}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 16.1, y: -293}
+  m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841467672
 MonoBehaviour:
@@ -1192,7 +1192,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2342,7 +2342,7 @@ GameObject:
   - component: {fileID: 1376726078}
   - component: {fileID: 1376726077}
   m_Layer: 5
-  m_Name: useridtxt
+  m_Name: UserIdTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3005,7 +3005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3104,7 +3104,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u306F\u3058\u307E\u308A\u306E\u7A93"
+  m_Text: B1020XXX
 --- !u!222 &1697575513
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3574,7 +3574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302189ab65ada45d1bc9e792cf024158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserId: {fileID: 1376726077}
+  UserId: {fileID: 0}
+  inputField: {fileID: 0}
 --- !u!1 &2009370316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3586,8 +3587,8 @@ GameObject:
   - component: {fileID: 2009370317}
   - component: {fileID: 2009370320}
   - component: {fileID: 2009370319}
-  - component: {fileID: 2009370321}
   - component: {fileID: 2009370318}
+  - component: {fileID: 2009370321}
   m_Layer: 5
   m_Name: AddButon
   m_TagString: Untagged
@@ -3657,7 +3658,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2009370319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009370321}
+        m_TargetAssemblyTypeName: UserAdd, Assembly-CSharp
+        m_MethodName: UserIdLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2009370319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3708,7 +3721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302189ab65ada45d1bc9e792cf024158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserId: {fileID: 841467672}
+  UserId: {fileID: 841467670}
+  inputField: {fileID: 1376726075}
 --- !u!1 &2018043245
 GameObject:
   m_ObjectHideFlags: 0
