@@ -25,6 +25,10 @@ public class LongPressExit : MonoBehaviour
   //一度でもメソッドを実行したか
   private bool _isInvokedEvent = false;
 
+  //透明度変更処理
+  private float _coloralfa = 0.0f;
+  private bool a_flag = false;
+
 
 private void Awake (){
     //ボタンを押し時のイベント作成
@@ -67,14 +71,15 @@ private void Awake (){
         var size = 0f;
         var speed = 0.01f;       
         
-        while (size <= 1.0f)
+        while (size <= 0.8f)
         {
             panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(50, 50, 30), size);
+            image.color -= new Color(0,0,0,size);
             size += speed;
 
             yield return null;
         }
-         if(size >= 1.0f){
+         if(size >= 0.8f){
               SceneManager.LoadScene("SendWindow");
             }
     
