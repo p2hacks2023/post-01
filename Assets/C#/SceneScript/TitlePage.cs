@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TitlePage : MonoBehaviour
 {
+    public GameObject window;
     
    public void NextWritingWindow(){
+        DontDestroyOnLoad(window);
+        window.AddComponent<TouchManager>();
         SceneManager.LoadScene("WritingScene");
     }
 }
