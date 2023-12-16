@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class LongPressExit : MonoBehaviour
+public class LongPressBack : MonoBehaviour
 {
   public GameObject panel;
 
@@ -64,19 +64,21 @@ private void Awake (){
 
     IEnumerator ChangePaneltoBigSize()
     {
-        var size = 0f;
-        var speed = 0.01f;       
+        var size = 1.0f;
+        var speed = 0.005f;       
         
-        while (size <= 1.0f)
+        while (size >= 0f)
         {
-            panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(50, 50, 30), size);
-            size += speed;
-
+           
+            panel.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), new Vector3(1, 1, 1), size);
+            size -= speed;  
             yield return null;
         }
-         if(size >= 1.0f){
-              SceneManager.LoadScene("SendWindow");
+        
+         if(size <= 0f){
+              SceneManager.LoadScene("WritingScene");
             }
+            
     
 /*
         if(_waitTime >= 6){

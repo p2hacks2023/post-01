@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TitlePage : MonoBehaviour
 {
-    
    public void NextWritingWindow(){
         SceneManager.LoadScene("WritingScene");
     }
