@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 275812890}
   - component: {fileID: 275812889}
   - component: {fileID: 275812888}
+  - component: {fileID: 275812891}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -155,12 +156,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 436503438}
-  m_Father: {fileID: 1604437211}
+  m_Father: {fileID: 448941580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3673, y: -3301.3594}
-  m_SizeDelta: {x: 285, y: 98}
+  m_AnchoredPosition: {x: 274.64062, y: -605}
+  m_SizeDelta: {x: 427.5, y: 147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275812888
 MonoBehaviour:
@@ -256,6 +257,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275812886}
   m_CullTransparentMesh: 1
+--- !u!225 &275812891
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275812886}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &436503437
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,8 +353,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -419,7 +432,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 275812887}
   m_Father: {fileID: 1604437211}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -748,7 +762,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 456, y: -1171}
-  m_SizeDelta: {x: 240, y: 240}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &694926373
 MonoBehaviour:
@@ -1719,7 +1733,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 448941580}
-  - {fileID: 275812887}
   m_Father: {fileID: 1367393061}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}

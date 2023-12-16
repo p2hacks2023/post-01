@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+[RequireComponent(typeof(CanvasGroup))]
 
 public class LongPressExit : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class LongPressExit : MonoBehaviour
   //透明度変更処理
   private float _coloralfa = 0.0f;
   private bool a_flag = false;
+
 
 
 private void Awake (){
@@ -62,10 +64,10 @@ private void Awake (){
     _isPressing     = true;
     _isInvokedEvent = false;
     _waitTime       = _longPressTime;
+
   
     StartCoroutine(ChangePaneltoBigSize());
-    Debug.Log(_waitTime);
-
+  
     IEnumerator ChangePaneltoBigSize()
     {
         var size = 0f;
