@@ -950,6 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   window: {fileID: 1255168378}
+  snow: {fileID: 1948002474}
 --- !u!114 &1494228397
 MonoBehaviour:
   m_ObjectHideFlags: 0
