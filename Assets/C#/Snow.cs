@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(MeshFilter),typeof(MeshRenderer))]
 public class Snow : MonoBehaviour
 {
-	const int SNOW_NUM = 16000;
+	const int SNOW_NUM = 1000;
 	private Vector3[] vertices_;
 	private int[] triangles_;
 	private Vector2[] uvs_;
