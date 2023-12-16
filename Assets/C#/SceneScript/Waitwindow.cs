@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Waitwindow : MonoBehaviour
 {
-   public void NextWaitWindow(){
+    int cnt = 0;
+
+    public void NextWaitWindow(){
         TouchManager.dis = 0.0f;
-        SceneManager.LoadScene("WaitScene");
+        cnt++;
+        if (cnt == 2) {
+            SceneManager.LoadScene("WaitScene");
+        }
     }
 }
 

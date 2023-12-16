@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEditor;
+using UnityEngine.EventSystems;
 
 public class TouchManager : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class TouchManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) return;
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, dis))
